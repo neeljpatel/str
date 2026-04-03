@@ -8,17 +8,17 @@ lerna-debug.log*
 
 # node_modules
 node_modules/
-chicago-collective/node_modules/
+frontend/node_modules/
 
 # local env files
 .env
 .env*.local
-chicago-collective/.env
-chicago-collective/.env*.local
-
+frontend/.env
+frontend/.env*.local
+tmp/
 # next.js
-chicago-collective/.next/
-chicago-collective/out/
+frontend/.next/
+frontend/out/
 
 # test coverage
 coverage/
@@ -29,3 +29,8 @@ coverage/
 # build
 dist/
 build/
+
+# python
+backend/venv/
+**/__pycache__/
+*.pyc
