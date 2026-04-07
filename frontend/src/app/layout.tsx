@@ -31,18 +31,21 @@ export default function RootLayout({
       <body className="font-sans min-h-screen flex flex-col bg-brand-light text-brand-dark antialiased">
         {isProd && (
           <>
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-M501Q013KE"
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-M501Q013KE');
-              `}
+            <Script id="gtm" strategy="afterInteractive">
+              {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRMZLR4X');`}
             </Script>
+            <noscript>
+              <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-MRMZLR4X"
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              />
+            </noscript>
           </>
         )}
         {children}
