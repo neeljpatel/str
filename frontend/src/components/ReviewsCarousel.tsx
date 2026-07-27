@@ -13,25 +13,25 @@ const reviews = [
   {
     id: 1,
     author: "Renee",
-    property: "Windy City Condo",
+    property: "City Center Oasis Condo",
     text: "Great place! Lots of space for family of 6. Close to all Chicago things! Secure parking also a plus!"
   },
   {
     id: 2,
     author: "Brian",
-    property: "Windy City Condo",
+    property: "City Center Oasis Condo",
     text: "Great stay. Lots of spacious bedrooms to fit large family. Great open kitchen/living communal area to relax together. Was able to walk everywhere..."
   },
   {
     id: 3,
     author: "Andrea",
-    property: "Navy Pier Condo",
+    property: "Luxurious River North Condo",
     text: "Great stay! Location is awesome, close to the heart of the city but far away enough that the area feels more local and less overwhelming."
   },
   {
     id: 4,
     author: "Jordan",
-    property: "Navy Pier Condo",
+    property: "Luxurious River North Condo",
     text: "Had an excellent stay at Ketan’s place. Great location, well-cleaned, incredibly spacious... He went the extra mile to make sure we had an excellent trip!"
   }
 ];
@@ -87,7 +87,7 @@ export default function ReviewsCarousel({ totalReviews }: { totalReviews?: numbe
           </div>
           
           <p className="font-serif text-xl sm:text-2xl text-brand-dark leading-relaxed mb-8 z-10 relative">
-            "{reviews[currentIndex].text}"
+            &ldquo;{reviews[currentIndex].text}&rdquo;
           </p>
           
           <div className="mt-auto">

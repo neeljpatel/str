@@ -13,8 +13,8 @@ export default function Footer() {
           </div>
           <div className="flex space-x-8 text-sm tracking-widest text-gray-300">
             <Link href="/" className="hover:text-white transition-colors">HOME</Link>
-            <Link href="/property/windy-city" className="hover:text-white transition-colors">WINDY CITY</Link>
-            <Link href="/property/navy-pier" className="hover:text-white transition-colors">NAVY PIER</Link>
+            <Link href="/property/city-center-oasis" className="hover:text-white transition-colors">CITY CENTER OASIS</Link>
+            <Link href="/property/luxurious-river-north" className="hover:text-white transition-colors">LUXURIOUS RIVER NORTH</Link>
           </div>
         </div>
         

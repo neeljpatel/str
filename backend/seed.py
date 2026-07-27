@@ -1,4 +1,5 @@
 import json
+import os
 from supabase import create_client
 from app.core.config import settings
 
@@ -12,8 +13,8 @@ def main():
     properties = [
         {
             "id": "b15ffd98-d93c-42bf-b0e4-1aa385963072",
-            "slug": "windy-city",
-            "title": "Windy City Condo",
+            "slug": "city-center-oasis",
+            "title": "City Center Oasis Condo",
             "location": "Chicago, IL",
             "summary": "Welcome to your ideal Chicago home - a spacious, modern 3-bedroom condo in the heart of River North, one of the city’s most walkable neighborhoods.",
             "checkin": "4:00 PM",
@@ -46,8 +47,8 @@ def main():
         },
         {
             "id": "5927e9de-4c31-469b-bf4f-2bd0bd2ef6f4",
-            "slug": "navy-pier",
-            "title": "Navy Pier Condo",
+            "slug": "luxurious-river-north",
+            "title": "Luxurious River North Condo",
             "location": "Chicago, IL",
             "summary": "Discover a stylish retreat designed for comfort, entertainment, and unbeatable walkability.",
             "checkin": "4:00 PM",
@@ -82,13 +83,17 @@ def main():
         res = supabase.table("properties").upsert(prop).execute()
         print(f"Inserted property {prop['slug']}")
 
-    with open("../chicago-collective/data/gallery.json", "r") as f:
-        galleries = json.load(f)
+    gallery_path = "../chicago-collective/data/gallery.json"
+    if os.path.exists(gallery_path):
+        with open(gallery_path, "r") as f:
+            galleries = json.load(f)
 
-    for slug, images in galleries.items():
-        doc = {"property_slug": slug, "images": images}
-        supabase.table("galleries").upsert(doc).execute()
-        print(f"Inserted gallery for {slug}")
+        for slug, images in galleries.items():
+            doc = {"property_slug": slug, "images": images}
+            supabase.table("galleries").upsert(doc).execute()
+            print(f"Inserted gallery for {slug}")
+    else:
+        print(f"Gallery file {gallery_path} not found, skipping gallery seed.")
 
 if __name__ == "__main__":
     main()

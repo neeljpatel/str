@@ -30,11 +30,11 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-12 items-center">
-            <Link href="/property/windy-city" className="text-sm tracking-[0.1em] text-gray-600 hover:text-brand-gold transition-colors">
-              WINDY CITY CONDO
+            <Link href="/property/city-center-oasis" className="text-sm tracking-[0.1em] text-gray-600 hover:text-brand-gold transition-colors">
+              CITY CENTER OASIS CONDO
             </Link>
-            <Link href="/property/navy-pier" className="text-sm tracking-[0.1em] text-gray-600 hover:text-brand-gold transition-colors">
-              NAVY PIER CONDO
+            <Link href="/property/luxurious-river-north" className="text-sm tracking-[0.1em] text-gray-600 hover:text-brand-gold transition-colors">
+              LUXURIOUS RIVER NORTH CONDO
             </Link>
           </div>
 
@@ -54,18 +54,18 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full pb-6 pt-4 px-4 shadow-lg flex flex-col space-y-4 text-center">
           <Link 
-            href="/property/windy-city" 
+            href="/property/city-center-oasis" 
             className="text-sm tracking-[0.1em] text-gray-600 py-2 border-b border-gray-50"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            WINDY CITY CONDO
+            CITY CENTER OASIS CONDO
           </Link>
           <Link 
-            href="/property/navy-pier" 
+            href="/property/luxurious-river-north" 
             className="text-sm tracking-[0.1em] text-gray-600 py-2"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            NAVY PIER CONDO
+            LUXURIOUS RIVER NORTH CONDO
           </Link>
         </div>
       )}

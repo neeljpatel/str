@@ -86,8 +86,8 @@ export default async function Admin2Dashboard() {
   };
 
   const getUnitAbbr = (title: string) => {
-    if (title.includes('Windy City')) return '2W';
-    if (title.includes('Navy Pier')) return '3W';
+    if (title.includes('City Center Oasis') || title.includes('Windy City')) return '2W';
+    if (title.includes('Luxurious River North') || title.includes('Navy Pier')) return '3W';
     return '';
   };
 
