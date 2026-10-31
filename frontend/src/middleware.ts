@@ -11,7 +11,8 @@ export async function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
   const isAdminDomain = hostname.startsWith('admin.chicagoavecollective.com');
 
-  if (isAdminDomain && !path.startsWith('/admin')) {
+  // /auth/* (Supabase email callback) must not be rewritten under /admin
+  if (isAdminDomain && !path.startsWith('/admin') && !path.startsWith('/auth')) {
     path = `/admin${path}`;
     url.pathname = path;
     rewritten = true;
@@ -32,6 +33,11 @@ export async function middleware(request: NextRequest) {
       return supabaseResponse;
     }
     
+    // Forgot password page is public
+    if (path === '/admin/forgot-password') {
+      return supabaseResponse;
+    }
+
     // Auth Guard: If no user, boot to login
     if (!user) {
       const loginUrl = request.nextUrl.clone();

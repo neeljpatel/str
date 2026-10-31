@@ -61,6 +61,9 @@ export default function Admin2Login() {
               className="w-full bg-white text-[#566a7f] border border-[#d9dee3] rounded-[0.375rem] px-3.5 py-2.5 outline-none focus:border-[#696cff] focus:ring-[0.15rem] focus:ring-[rgba(105,108,255,0.1)] transition-all placeholder:text-[#b4bdc6] text-[0.9375rem]"
             />
           </div>
+          <div className="text-right">
+            <a href="/admin/forgot-password" className="text-[#696cff] text-[0.8125rem] hover:underline">Forgot password?</a>
+          </div>
           {error && <p className="text-[#ff3e1d] text-xs font-medium">{error}</p>}
           <button
             type="submit"
